@@ -23,7 +23,8 @@ const searchCognitoRegion = async (_: never, input: string) => {
         { get name() { return greenify(this.value) + ' :: Asia Pacific (Sydney)' }, value: 'ap-southeast-2' },
         { get name() { return greenify(this.value) + ' :: EU (Frankfurt)' }, value: 'eu-central-1' },
         { get name() { return greenify(this.value) + ' :: EU (Ireland)' }, value: 'eu-west-1' },
-        { get name() { return greenify(this.value) + ' :: EU (London)' }, value: 'eu-west-2' }
+        { get name() { return greenify(this.value) + ' :: EU (London)' }, value: 'eu-west-2' },
+        { get name() { return greenify(this.value) + ' :: EU (Paris)' }, value: 'eu-west-3' }
     ];
     const fuzzyResult = fuzzy.filter(input, region, { extract: el => el.value });
     return fuzzyResult.map(el => {

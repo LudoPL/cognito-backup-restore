@@ -87,7 +87,8 @@ export const restoreUsers = async (cognito: CognitoISP, UserPoolId: string, file
             const params: AdminCreateUserRequest = {
                 UserPoolId,
                 Username: user.Username,
-                UserAttributes: attributes
+                UserAttributes: attributes,
+                TemporaryPassword: 'dX1-' + Math.random().toString(36).slice(-8)
             };
 
             // Set Username as email if UsernameAttributes of UserPool contains email
